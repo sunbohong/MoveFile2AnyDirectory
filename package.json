@@ -2,22 +2,91 @@
 	"name": "movefile2anydirectory",
 	"displayName": "MoveFile2AnyDirectory",
 	"description": "MoveFile2AnyDirectory",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.45.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"publisher": "kukudeaidian-sun",
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"configuration": [
+			{
+				"title": "MoveFile2AnyDirectory",
+				"properties": {
+					"com.sun.MoveFile2AnyDirectory1": {
+						"type": "string",
+						"description": "The 1st directory where you want move file to"
+					},
+					"com.sun.MoveFile2AnyDirectory2": {
+						"type": "string",
+						"description": "The 2nd directory where you want move file to"
+					},
+					"com.sun.MoveFile2AnyDirectory3": {
+						"type": "string",
+						"description": "The 3rd directory where you want move file to"
+					},
+					"com.sun.MoveFile2AnyDirectory4": {
+						"type": "string",
+						"description": "The 4th directory where you want move file to"
+					},
+					"com.sun.MoveFile2AnyDirectory5": {
+						"type": "string",
+						"description": "The 5th directory where you want move file to"
+					},
+					"com.sun.MoveFile2AnyDirectory6": {
+						"type": "string",
+						"description": "The 6th directory where you want move file to"
+					},
+					"com.sun.MoveFile2AnyDirectory7": {
+						"type": "string",
+						"description": "The 7th directory where you want move file to"
+					}
+				}
+			}
+		],
+		"commands": [
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory1",
+				"title": "MoveFile2AnyDirectory1"
+			},
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory2",
+				"title": "MoveFile2AnyDirectory2"
+			},
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory3",
+				"title": "MoveFile2AnyDirectory3"
+			},
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory4",
+				"title": "MoveFile2AnyDirectory4"
+			},
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory5",
+				"title": "MoveFile2AnyDirectory5"
+			},
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory6",
+				"title": "MoveFile2AnyDirectory6"
+			},
+			{
+				"category": "MoveFile2AnyDirectory",
+				"command": "com.sun.MoveFile2AnyDirectory7",
+				"title": "MoveFile2AnyDirectory7"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
