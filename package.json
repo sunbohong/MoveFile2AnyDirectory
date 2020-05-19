@@ -2,6 +2,10 @@
 	"name": "movefile2anydirectory",
 	"displayName": "MoveFile2AnyDirectory",
 	"description": "MoveFile2AnyDirectory",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sunbohong/MoveFile2AnyDirectory"
+	},
 	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.45.0"
