@@ -25,10 +25,20 @@ export function activate(context: vscode.ExtensionContext) {
 						const destPath = targetConfig + '\\' + (filePath.split('\\').reverse()[0]);
 						return destPath;
 					} else {
-						const rootPath = vscode.workspace.rootPath;
-						const filePath = vscode.window.activeTextEditor!.document.fileName;
-						const destPath = rootPath + '\\' + targetConfig + '\\' + (filePath.split('\\').reverse()[0]);
-						return destPath;
+						if (!vscode.workspace.workspaceFolders) {
+							throw new Error('无法找到目标路径');
+							return 'tmp';
+						}
+						for (const iterator of vscode.workspace.workspaceFolders) {
+							const path = iterator.uri.fsPath;
+							if (vscode.window.activeTextEditor!.document.fileName.indexOf(path) !== 0) {
+								continue;
+							}
+							const filePath = vscode.window.activeTextEditor!.document.fileName;
+							const destPath = path + '\\' + targetConfig + '\\' + (filePath.split('\\').reverse()[0]);
+							return destPath;
+						}
+						throw new Error('无法找到目标路径');
 					}
 				};
 				const destPath = getDestPath();
